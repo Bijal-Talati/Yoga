@@ -5,23 +5,40 @@
   <title>Yoga Admin Panel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #svgPreview {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header><h1>Admin Panel: Add/Edit Asana</h1></header>
 
   <main>
+    <label for="existingSelect">Edit Existing Asana:</label>
+    <select id="existingSelect"><option value="">-- Select Asana --</option></select>
+
     <form id="asanaForm">
       <label>Category: <input type="text" id="category" required></label><br>
       <label>ID (unique): <input type="text" id="id" required></label><br>
       <label>Name: <input type="text" id="name" required></label><br>
       <label>SVG Code: <textarea id="svg" rows="4" required></textarea></label><br>
+      <div id="svgPreview">SVG preview will appear here</div>
       <label>Procedure: <textarea id="procedure" required></textarea></label><br>
       <label>Benefits: <textarea id="benefits" required></textarea></label><br>
       <label>Caution: <textarea id="caution" required></textarea></label><br>
       <label>Ayurveda: <textarea id="ayurveda" required></textarea></label><br>
       <label>Therapy: <textarea id="therapy" required></textarea></label><br>
-      <button type="submit">Save Asana</button>
+      <button type="submit">💾 Save Asana</button>
+      <button type="button" id="deleteBtn">🗑️ Delete Asana</button>
     </form>
+
+    <hr>
+    <h3>Data Backup</h3>
+    <button onclick="exportData()">⬇ Export JSON</button>
+    <input type="file" id="importFile" accept=".json">
     <hr>
     <button onclick="location.href='index.html'">← Back to Site</button>
   </main>
