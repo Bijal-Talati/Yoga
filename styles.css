@@ -71,3 +71,36 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #006600;
+  font-weight: bold;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
