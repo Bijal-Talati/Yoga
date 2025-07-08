@@ -14,3 +14,19 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+if (document.getElementById("menu")) {
+  const menu = document.getElementById("menu");
+  for (const [cat, tests] of Object.entries(asanas)) {
+    const h2 = document.createElement("h2");
+    h2.textContent = cat;
+    menu.appendChild(h2);
+    tests.forEach(a => {
+      const aLink = document.createElement("a");
+      aLink.href = `asana.html?asana=${a.id}`;
+      aLink.textContent = a.name;
+      menu.appendChild(aLink);
+    });
+  }
+}
