@@ -1,39 +1,9 @@
-const asanas = {
-  "Standing": [
-    {
-      id: "tadasana",
-      name: "Tadasana (Mountain Pose)",
-      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="100%" height="200">
-        <circle cx="100" cy="40" r="20" fill="#f2c9a0"/>
-        <rect x="95" y="60" width="10" height="200" fill="#61afef"/>
-        <line x1="95" y1="140" x2="70" y2="200" stroke="#d19a66" stroke-width="5"/>
-        <line x1="105" y1="140" x2="130" y2="200" stroke="#d19a66" stroke-width="5"/>
-      </svg>`,
-      procedure: "Stand tall, feet together, arms relaxed. Inhale and stretch upward.",
-      benefits: "Improves posture, increases focus, strengthens legs.",
-      caution: "Avoid if dizzy or low BP.",
-      ayurveda: "Grounding for Vata, stabilizing.",
-      therapy: "Aids sciatica, posture correction."
-    }
-  ],
-  "Seated": [
-    {
-      id: "dandasana",
-      name: "Dandasana (Staff Pose)",
-      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="200">
-        <rect x="80" y="50" width="40" height="100" fill="#98c379"/>
-        <line x1="80" y1="100" x2="30" y2="150" stroke="#e06c75" stroke-width="5"/>
-        <line x1="120" y1="100" x2="170" y2="150" stroke="#e06c75" stroke-width="5"/>
-        <circle cx="100" cy="30" r="20" fill="#e5c07b"/>
-      </svg>`,
-      procedure: "Sit with legs straight, spine tall, arms beside hips.",
-      benefits: "Tones abdomen, strengthens back.",
-      caution: "Avoid with back pain or herniated discs.",
-      ayurveda: "Pacifies Kapha, stimulates digestion.",
-      therapy: "Improves digestion, tones spine."
-    }
-  ]
+const defaultAsanas = {
+  "Standing": [/* ... your built-in data ... */],
+  "Seated": [/* ... */]
 };
+
+let asanas = JSON.parse(localStorage.getItem("asanasData")) || defaultAsanas;
 
 // Populate filters
 const benefitSet = new Set();
