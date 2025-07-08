@@ -19,3 +19,25 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+// Populate content based on query
+if (document.getElementById("content")) {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("asana");
+  let found = null;
+  outer: for (const arr of Object.values(asanas)) {
+    for (const a of arr) if (a.id === id) { found = a; break outer; }
+  }
+  if (!found) {
+    document.getElementById("content").innerHTML = "<p>Asana not found.</p>";
+  } else {
+    document.title = found.name;
+    document.getElementById("title").textContent = found.name;
+    document.getElementById("svg-diagram").innerHTML = found.svg;
+    document.getElementById("procedure").textContent = found.procedure;
+    document.getElementById("benefits").textContent = found.benefits;
+    document.getElementById("caution").textContent = found.caution;
+    document.getElementById("ayurveda").textContent = found.ayurveda;
+    document.getElementById("therapy").textContent = found.therapy;
+  }
+}
