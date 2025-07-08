@@ -21,4 +21,17 @@
   "backup": "Data Backup",
   "export": "⬇ Export JSON",
   "back": "← Back to Site"
+
+  "nav_home": "Home",
+  "nav_about": "About",
+  "nav_contact": "Contact",
+  "nav_admin": "Admin",
+  "about_title": "About Us",
+  "about_text": "This website is dedicated to sharing knowledge of yoga asanas, their benefits, procedures, and Ayurveda-based guidance to help individuals on their journey to physical and mental wellness.",
+  "contact_title": "Contact Us",
+  "contact_name": "Name:",
+  "contact_email": "Email:",
+  "contact_msg": "Message:",
+  "contact_send": "Send",
+  "contact_thanks": "Thank you for contacting us!"
 }
