@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yoga Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Admin Panel: Add/Edit Asana</h1></header>
+
+  <main>
+    <form id="asanaForm">
+      <label>Category: <input type="text" id="category" required></label><br>
+      <label>ID (unique): <input type="text" id="id" required></label><br>
+      <label>Name: <input type="text" id="name" required></label><br>
+      <label>SVG Code: <textarea id="svg" rows="4" required></textarea></label><br>
+      <label>Procedure: <textarea id="procedure" required></textarea></label><br>
+      <label>Benefits: <textarea id="benefits" required></textarea></label><br>
+      <label>Caution: <textarea id="caution" required></textarea></label><br>
+      <label>Ayurveda: <textarea id="ayurveda" required></textarea></label><br>
+      <label>Therapy: <textarea id="therapy" required></textarea></label><br>
+      <button type="submit">Save Asana</button>
+    </form>
+    <hr>
+    <button onclick="location.href='index.html'">← Back to Site</button>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
