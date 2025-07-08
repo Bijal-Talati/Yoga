@@ -25,26 +25,26 @@
     <select id="existingSelect"><option value="">-- Select Asana --</option></select>
 
     <form id="asanaForm">
-      <label>Category: <input type="text" id="category" required></label><br>
-      <label>ID (unique): <input type="text" id="id" required></label><br>
-      <label>Name: <input type="text" id="name" required></label><br>
-      <label>SVG Code: <textarea id="svg" rows="4" required></textarea></label><br>
-      <div id="svgPreview">SVG preview will appear here</div>
-      <label>Procedure: <textarea id="procedure" required></textarea></label><br>
-      <label>Benefits: <textarea id="benefits" required></textarea></label><br>
-      <label>Caution: <textarea id="caution" required></textarea></label><br>
-      <label>Ayurveda: <textarea id="ayurveda" required></textarea></label><br>
-      <label>Therapy: <textarea id="therapy" required></textarea></label><br>
-      <button type="submit">💾 Save Asana</button>
-      <button type="button" id="deleteBtn">🗑️ Delete Asana</button>
+      <label data-i18n="category">Category: <input type="text" id="category" required></label><br>
+      <label data-i18n="id">ID (unique): <input type="text" id="id" required></label><br>
+      <label data-i18n="name">Name: <input type="text" id="name" required></label><br>
+      <label data-i18n="svg">SVG Code: <textarea id="svg" rows="4" required></textarea></label><br>
+      <div id="svgPreview" data-i18n="svg_preview">SVG preview will appear here</div>
+      <label data-i18n="procedure">Procedure: <textarea id="procedure" required></textarea></label><br>
+      <label data-i18n="benefits">Benefits: <textarea id="benefits" required></textarea></label><br>
+      <label data-i18n="caution">Caution: <textarea id="caution" required></textarea></label><br>
+      <label data-i18n="ayurveda">Ayurveda: <textarea id="ayurveda" required></textarea></label><br>
+      <label data-i18n="therapy">Therapy: <textarea id="therapy" required></textarea></label><br>
+      <button type="submit" id="saveBtn" data-i18n="save">💾 Save Asana</button>
+      <button type="button" id="deleteBtn" data-i18n="delete">🗑️ Delete Asana</button>
     </form>
 
     <hr>
-    <h3>Data Backup</h3>
-    <button onclick="exportData()">⬇ Export JSON</button>
-    <input type="file" id="importFile" accept=".json">
-    <hr>
-    <button onclick="location.href='index.html'">← Back to Site</button>
+      <label data-i18n="edit_select">Edit Existing Asana:</label>
+      <h3 data-i18n="backup">Data Backup</h3>
+      <button onclick="exportData()" data-i18n="export">⬇ Export JSON</button>
+      <input type="file" id="importFile" accept=".json">
+      <button onclick="location.href='index.html'" data-i18n="back">← Back to Site</button>
   </main>
 
   <script src="admin.js"></script>
