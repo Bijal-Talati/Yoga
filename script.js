@@ -58,6 +58,12 @@ function updateTranslations() {
 
   if (document.getElementById("menu")) {
     document.querySelector("h1").textContent = translations.title;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[key]) {
+        el.textContent = translations[key];
+      }
+    });
     document.getElementById("searchBar").placeholder = translations.search_placeholder;
     document.getElementById("benefitFilter").options[0].text = translations.filter_benefit;
     document.getElementById("cautionFilter").options[0].text = translations.filter_caution;
