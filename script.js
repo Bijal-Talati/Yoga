@@ -1,39 +1,3 @@
-let currentLang = localStorage.getItem("lang") || "en";
-let translations = {};
-
-async function loadTranslations(lang) {
-  const res = await fetch(`lang/${lang}.json`);
-  translations = await res.json();
-  localStorage.setItem("lang", lang);
-  currentLang = lang;
-  updateTranslations();
-}
-
-function updateTranslations() {
-  if (document.title === "Asana Details") {
-    document.getElementById("procedure").previousElementSibling.textContent = translations.procedure;
-    document.getElementById("benefits").previousElementSibling.textContent = translations.benefits;
-    document.getElementById("caution").previousElementSibling.textContent = translations.caution;
-    document.getElementById("ayurveda").previousElementSibling.textContent = translations.ayurveda;
-    document.getElementById("therapy").previousElementSibling.textContent = translations.therapy;
-    document.querySelector("a[href='index.html']").textContent = translations.back_to_list;
-  }
-
-  if (document.getElementById("menu")) {
-    document.querySelector("h1").textContent = translations.title;
-    document.getElementById("searchBar").placeholder = translations.search_placeholder;
-    document.getElementById("benefitFilter").options[0].text = translations.filter_benefit;
-    document.getElementById("cautionFilter").options[0].text = translations.filter_caution;
-  }
-}
-
-document.getElementById("languageSwitcher")?.addEventListener("change", e => {
-  loadTranslations(e.target.value);
-});
-
-// On load
-loadTranslations(currentLang);
-
 const defaultAsanas = {
   "Standing": [
     {
@@ -69,6 +33,43 @@ const defaultAsanas = {
       therapy: "Improves digestion, tones spine."
     }]
 };
+
+
+let currentLang = localStorage.getItem("lang") || "en";
+let translations = {};
+
+async function loadTranslations(lang) {
+  const res = await fetch(`lang/${lang}.json`);
+  translations = await res.json();
+  localStorage.setItem("lang", lang);
+  currentLang = lang;
+  updateTranslations();
+}
+
+function updateTranslations() {
+  if (document.title === "Asana Details") {
+    document.getElementById("procedure").previousElementSibling.textContent = translations.procedure;
+    document.getElementById("benefits").previousElementSibling.textContent = translations.benefits;
+    document.getElementById("caution").previousElementSibling.textContent = translations.caution;
+    document.getElementById("ayurveda").previousElementSibling.textContent = translations.ayurveda;
+    document.getElementById("therapy").previousElementSibling.textContent = translations.therapy;
+    document.querySelector("a[href='index.html']").textContent = translations.back_to_list;
+  }
+
+  if (document.getElementById("menu")) {
+    document.querySelector("h1").textContent = translations.title;
+    document.getElementById("searchBar").placeholder = translations.search_placeholder;
+    document.getElementById("benefitFilter").options[0].text = translations.filter_benefit;
+    document.getElementById("cautionFilter").options[0].text = translations.filter_caution;
+  }
+}
+
+document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+  loadTranslations(e.target.value);
+});
+
+// On load
+loadTranslations(currentLang);
 
 let asanas = JSON.parse(localStorage.getItem("asanasData")) || defaultAsanas;
 
