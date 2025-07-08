@@ -129,7 +129,7 @@ function loadAsanaDetail() {
     }
   }
   if (found) {
-    document.title = found.name;
+    if (translations.title) document.title = translations.title;
     document.getElementById("title").textContent = found.name;
     document.getElementById("svg-diagram").innerHTML = found.svg;
     document.getElementById("procedure").textContent = found.procedure;
