@@ -2,6 +2,38 @@ const form = document.getElementById("asanaForm");
 const preview = document.getElementById("svgPreview");
 const select = document.getElementById("existingSelect");
 
+let currentLang = localStorage.getItem("lang") || "en";
+let translations = {};
+
+async function loadTranslations(lang) {
+  const res = await fetch(`lang/${lang}.json`);
+  translations = await res.json();
+  localStorage.setItem("lang", lang);
+  currentLang = lang;
+  updateAdminTranslations();
+}
+
+function updateAdminTranslations() {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[key]) {
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = translations[key];
+      } else {
+        el.textContent = translations[key];
+      }
+    }
+  });
+
+  document.title = translations.title || "Yoga Admin Panel";
+}
+
+document.getElementById("languageSwitcher")?.addEventListener("change", e => {
+  loadTranslations(e.target.value);
+});
+
+loadTranslations(currentLang);
+
 function getAsanas() {
   return JSON.parse(localStorage.getItem("asanasData") || "{}");
 }
