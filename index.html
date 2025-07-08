@@ -3,14 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Yoga Asanas Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header><h1>Yoga Asanas</h1></header>
-  <nav id="menu">
-    <!-- JS will fill categories and asanas here -->
-  </nav>
-  <footer>&copy; 2025 Yoga Website</footer>
+  <header>
+    <h1>Yoga Asanas</h1>
+    <input type="text" id="searchBar" placeholder="Search asanas...">
+    <div id="filters">
+      <select id="benefitFilter">
+        <option value="">Filter by Benefit</option>
+      </select>
+      <select id="cautionFilter">
+        <option value="">Filter by Caution</option>
+      </select>
+    </div>
+  </header>
+  
+  <main>
+    <nav id="menu"></nav>
+  </main>
+
+  <footer>&copy; 2025 Yoga Explorer</footer>
   <script src="script.js"></script>
 </body>
 </html>
